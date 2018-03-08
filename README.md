@@ -1,5 +1,7 @@
 # react-cropperjs
 
+## Fork from https://github.com/TAPP-TV/react-cropperjs
+
 A React Component wrapper of [cropperjs](https://github.com/fengyuanchen/cropperjs) without jQuery as a dependency. If you want to use jQuery, check out the original project [react-cropper](https://github.com/roadmanfong/react-cropper).
 
 [![NPM](https://nodei.co/npm/react-cropperjs.png?downloads=true)](https://nodei.co/npm/react-cropperjs/)

@@ -1,7 +1,7 @@
 {
-  "name": "react-cropperjs",
-  "version": "1.2.5",
-  "description": "Cropper as a React component",
+  "name": "react-cropperjs-fork",
+  "version": "1.2.6",
+  "description": "Cropper as a React component. Fork from https://github.com/TAPP-TV/react-cropperjs",
   "main": "dist/react-cropper.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -11,10 +11,7 @@
     "prebuild": "npm run lint",
     "build-example": "npm run build && webpack example/index.js --config example/webpack.config.js --output-path example/assets"
   },
-  "author": "Petar Bojinov <petar@tapptv.com>",
-  "bugs": {
-    "url": "https://github.com/TAPP-TV/react-cropperjs/issues"
-  },
+  "author": "blackzhuo <wuzhuo0425@163.com>",
   "keywords": [
     "react",
     "react-component",
@@ -24,13 +21,14 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/TAPP-TV/react-cropperjs.git"
+    "url": "https://github.com/blackzhuo/react-cropperjs"
   },
   "dependencies": {
-    "cropperjs": "^0.8.1"
+    "cropperjs": "^0.8.1",
+    "prop-types": "^15.6.0"
   },
   "peerDependencies": {
-    "react": ">=0.14.0"
+    "react": "^16.0.0"
   },
   "devDependencies": {
     "babel": "^5.8.23",
@@ -41,8 +39,8 @@
     "eslint-plugin-babel": "^2.1.1",
     "eslint-plugin-react": "^3.3.2",
     "extract-text-webpack-plugin": "^0.8.2",
-    "react": "^0.14.0",
-    "react-dom": "^0.14.0",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
     "style-loader": "^0.12.3",
     "webpack": "^1.12.1"
   }
