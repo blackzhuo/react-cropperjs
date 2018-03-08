@@ -4,16 +4,14 @@ import Cropper from 'cropperjs';
 import 'cropperjs';
 import 'cropperjs/dist/cropper.css';
 
-const CropperJS = React.createClass({
+class CropperJS extends React.Component {
 
-   propTypes: {
-      // react cropper options
+   static propTypes = {
       crossOrigin: PropTypes.string,
       src: PropTypes.string,
       alt: PropTypes.string,
       style: PropTypes.object,
 
-      // cropper options
       aspectRatio: PropTypes.number,
       crop: PropTypes.func,
       preview: PropTypes.string,
@@ -42,20 +40,19 @@ const CropperJS = React.createClass({
       minCropBoxWidth: PropTypes.number,
       minCropBoxHeight: PropTypes.number,
 
-      // cropper callbacks
       build: PropTypes.func,
       built: PropTypes.func,
       cropstart: PropTypes.func,
       cropmove: PropTypes.func,
       cropend: PropTypes.func,
       zoom: PropTypes.func
-   },
+   };
 
    getDefaultProps() {
       return {
          src: null
       };
-   },
+   }
 
    componentDidMount() {
       var options = {};
@@ -65,7 +62,7 @@ const CropperJS = React.createClass({
          }
       }
       this.cropper = new Cropper(this.refs.img, options);
-   },
+   }
 
    componentWillReceiveProps(nextProps) {
       if (nextProps.src !== this.props.src) {
@@ -74,7 +71,7 @@ const CropperJS = React.createClass({
       if (nextProps.aspectRatio !== this.props.aspectRatio) {
          this.setAspectRatio(nextProps.aspectRatio);
       }
-   },
+   }
 
    componentWillUnmount() {
       if (this.cropper) {
@@ -83,83 +80,83 @@ const CropperJS = React.createClass({
       // While we're at it remove our reference to the jQuery instance
       //   delete this.$img;
       }
-   },
+   }
 
    move(offsetX, offsetY) {
       return this.cropper.move(offsetX, offsetY);
-   },
+   }
 
    zoom(ratio) {
       return this.cropper.zoom(ratio);
-   },
+   }
 
    rotate(degree) {
       return this.cropper.rotate(degree);
-   },
+   }
 
    enable() {
       return this.cropper.enable();
-   },
+   }
 
    disable() {
       return this.cropper.disable();
-   },
+   }
 
    reset() {
       return this.cropper.reset();
-   },
+   }
 
    clear() {
       return this.cropper.clear();
-   },
+   }
 
    replace(url) {
       return this.cropper.replace(url);
-   },
+   }
 
    getData(rounded) {
       return this.cropper.getData(rounded);
-   },
+   }
 
    setData(data) {
       return this.cropper.setData(data);
-   },
+   }
 
    getContainerData() {
       return this.cropper.getContainerData();
-   },
+   }
 
    getImageData() {
       return this.cropper.getImageData();
-   },
+   }
 
    getCanvasData() {
       return this.cropper.getCanvasData();
-   },
+   }
 
    setCanvasData(data) {
       return this.cropper.setCanvasData(data);
-   },
+   }
 
    getCropBoxData() {
       return this.cropper.getCropBoxData();
-   },
+   }
 
    setCropBoxData(data) {
       return this.cropper.setCropBoxData(data);
-   },
+   }
 
    getCroppedCanvas(options) {
       return this.cropper.getCroppedCanvas(options);
-   },
+   }
 
    setAspectRatio(aspectRatio) {
       return this.cropper.setAspectRatio(aspectRatio);
-   },
+   }
 
    setDragMode() {
       return this.cropper.setDragMode();
-   },
+   }
 
    render() {
       const imgStyle = {
@@ -180,6 +177,6 @@ const CropperJS = React.createClass({
          </div>
          );
    }
-});
+};
 
 export default CropperJS;
